@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Constructor Function</title>
+  </head>
+  <body>
+    <script>
+      // Constructor Function - function that will generate an object
+      function Todo(name, completed) { // the variable name can be uppercase to signifyn it is a constructor function
+        console.log(this);
+        this.name = name;
+        (this.completed = completed),
+          (this.getTodoName = function () {
+            console.log(this.name);
+          });
+      }
+
+      const todo = new Todo("Buy Eggs", false);
+      const todo2 = new Todo("Do my homework", false);
+
+      todo.getTodoName();
+      todo2.getTodoName();
+    </script>
+  </body>
+</html>
